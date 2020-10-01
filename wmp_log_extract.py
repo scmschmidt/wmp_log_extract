@@ -21,12 +21,14 @@ Author: Sören Schmidt <soeren.schmidt@suse.com>
 
 This tool checks if WMP is set up correctly. 
 
-Exit codes:        0   All checks ok. WMP has been set up correctly.
-                   1   TODO
+Exit codes:        0   No problems.
+                   1   Error in arguments.
+                   2   No WMP log data found. 
 
 Changelog:
 
-30.09.2020  v1.0  First release.
+30.09.2020  v1.0    First release.
+01.10.2020  v1.0.1  Exit codes corrected
 '''
 
 import argparse
@@ -93,7 +95,7 @@ def parse_arguments():
         if arguments.timestamp_pattern:
             arguments.timestamp_pattern = re.compile(arguments.timestamp_pattern)
     except Exception as err:
-        exit_on_error('Timestamp pattern is invalid: %s\n' % err) 
+        exit_on_error('Timestamp pattern is invalid: %s\n' % err, 2) 
 
     return arguments
 
