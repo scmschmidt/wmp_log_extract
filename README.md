@@ -150,3 +150,18 @@ timestamp,SAP.slice/memory.low,SAP.slice/memory.current,SAP.slice/memory.swap.cu
 
 All collected data in CSV for further processing, like drawing graphs with gnuplot, LibreCalc, Excel or other tools.
 
+
+## Exit Codes
+| exit code | description                                        |
+|-----------|----------------------------------------------------|
+|     0     | No problems.                                       |
+|     1     | Wrong parameters given to the tool on commandline. |   
+|     2     | No WMP log data found.                             |
+
+
+## Changelog
+
+|    date    | version  | comment                                     |
+|------------|----------|---------------------------------------------|
+| 30.09.2020 | v1.0     | First release.                              |
+| 01.10.2020 | v1.0.1   | Exit codes corrected                        |
